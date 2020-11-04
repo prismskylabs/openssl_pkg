@@ -566,6 +566,10 @@ class OpenSSLConan(ConanFile):
         if tools.os_info.is_windows and not self._win_bash:
             # enforce strawberry perl, otherwise wrong perl could be used (from Git bash, MSYS, etc.)
             return os.path.join(self.deps_cpp_info["strawberryperl"].rootpath, "bin", "perl.exe")
+        if "OPENSSL_PERL" in os.environ: # yokto sdk has it's own perl and it derails configure, we need system perl
+            return os.environ["OPENSSL_PERL"]
+            # enforce strawberry perl, otherwise wrong perl could be used (from Git bash, MSYS, etc.)
+            return os.path.join(self.deps_cpp_info["strawberryperl"].rootpath, "bin", "perl.exe")
         return "perl"
 
     @property

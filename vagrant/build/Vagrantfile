@@ -9,7 +9,7 @@ load base_vagrantfile
 
 Vagrant.configure("2") do |config|
     config.vm.network "private_network", type: "dhcp"
-    config.vm.synced_folder File.dirname(__FILE__) + "/../../", "/home/vagrant/libjpeg-turbo_pkg", nfs: true
+    config.vm.synced_folder File.dirname(__FILE__) + "/../../", "/home/vagrant/openssl_pkg", nfs: true
 
 #    config.vm.provision "shell" do |s|
 #         s.inline = "bash -c '. /home/vagrant/zlib_pkg/edge_build_base/src/scripts/setup_routines.sh ; base_setup_provision'"

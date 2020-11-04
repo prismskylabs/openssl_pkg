@@ -60,6 +60,7 @@ class OpenSSLVersion(object):
 
 class OpenSSLConan(ConanFile):
     name = "openssl"
+    version = "1.1.1h"
     settings = "os", "compiler", "arch", "build_type"
     url = "https://github.com/conan-io/conan-center-index"
     homepage = "https://github.com/openssl/openssl"
